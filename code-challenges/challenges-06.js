@@ -11,11 +11,11 @@
 // Output: 78
 //  
 
-const findMax = (arr)=>{
+const findMax = (arr) => {
     let max;
-    max=arr[0];
-    for(let i=1;i<=arr.length-1;i++){
-        if(arr[i]>max)max=arr[i];else continue;
+    max = arr[0];
+    for (let i = 1; i <= arr.length - 1; i++) {
+        if (arr[i] > max) max = arr[i]; else continue;
     }
     return max;
 }
@@ -32,11 +32,11 @@ const findMax = (arr)=>{
 // Output: 81
 //  
 
-const sumNums = (arr)=>{
-    let sum=0;
-    for(let i=0;i<=arr.length-1;i++){
-          if(typeof arr[i]==="number") sum+=arr[i];else continue; //This method can be used to distinguish numbers if (arr[i] == +arr[i])
-      }
+const sumNums = (arr) => {
+    let sum = 0;
+    for (let i = 0; i <= arr.length - 1; i++) {
+        if (typeof arr[i] === "number") sum += arr[i]; else continue; //This method can be used to distinguish numbers if (arr[i] == +arr[i])
+    }
     return sum;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -50,17 +50,30 @@ const sumNums = (arr)=>{
 //  
 // Input: ['C#', 'JS', 'Ruby','Python'] 
 // Output: ['Python','Ruby','JS','C#']
-const reverseArray = (arr)=>{
-    let temp;
-    let helperArray=[];
-    let end=arr.length-1;
-    for(let i=0;i<=end;i++){
-        temp=arr.pop();
-        helperArray.push(temp)
-      }
-      arr=[...helperArray]// this is Spread Operator it is use to copy array to another array.
-      return arr;// and i can return helperArray directly.
-}
+// const reverseArray = (arr)=>{
+//     let temp;
+//     let helperArray=[];
+//     let end=arr.length-1;
+//     for(let i=0;i<=end;i++){
+//         temp=arr.pop();
+//         helperArray.push(temp)
+//       }
+//       arr=[...helperArray]// this is Spread Operator it is use to copy array to another array.
+//       return arr;// and i can return helperArray directly.
+// }
 // -------------------------------------------------------------------------------------------------------
+// another solution
+const reverseArray = (arr) => {
+    let temp;
+    let start = 0;
+    let end = arr.length - 1;
+    for (let i = start; i <= end; i++) {
+        if (i >= end - i) return arr;
+        temp = arr[i];
+        arr[i] = arr[end - i];
+        arr[end - i] = temp;
+    }
+}
 
-module.exports = {findMax , sumNums, reverseArray};
+
+module.exports = { findMax, sumNums, reverseArray };
