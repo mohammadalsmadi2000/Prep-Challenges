@@ -50,30 +50,30 @@ const sumNums = (arr) => {
 //  
 // Input: ['C#', 'JS', 'Ruby','Python'] 
 // Output: ['Python','Ruby','JS','C#']
-// const reverseArray = (arr)=>{
-//     let temp;
-//     let helperArray=[];
-//     let end=arr.length-1;
-//     for(let i=0;i<=end;i++){
-//         temp=arr.pop();
-//         helperArray.push(temp)
-//       }
-//       arr=[...helperArray]// this is Spread Operator it is use to copy array to another array.
-//       return arr;// and i can return helperArray directly.
-// }
-// -------------------------------------------------------------------------------------------------------
-// another solution
-const reverseArray = (arr) => {
-    let temp;
-    let start = 0;
-    let end = arr.length - 1;
-    for (let i = start; i <= end; i++) {
-        if (i >= end - i) return arr;
-        temp = arr[i];
-        arr[i] = arr[end - i];
-        arr[end - i] = temp;
+//const reverseArray = (arr) => {
+    //     let temp;
+    //     let helperArray=[];
+    //     let end=arr.length-1;
+    //     for(let i=0;i<=end;i++){
+    //         temp=arr.pop();
+    //         helperArray.push(temp)
+    //       }
+    //       arr=[...helperArray]// this is Spread Operator it is use to copy array to another array.
+    //       return arr;// and i can return helperArray directly.
+    // }
+    // -------------------------------------------------------------------------------------------------------
+    // another solution
+    const reverseArray = (arr) => {
+        let temp;
+        let start = 0;
+        let end = arr.length - 1;
+        for (let i = start; i <= end; i++) {
+            if (i >= end - i) return arr;
+            temp = arr[i];
+            arr[i] = arr[end - i];
+            arr[end - i] = temp;
+        }
     }
-}
 
 
-module.exports = { findMax, sumNums, reverseArray };
+    module.exports = { findMax, sumNums, reverseArray };
