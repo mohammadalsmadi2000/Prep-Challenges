@@ -106,18 +106,18 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  for(const el of arr){
-    for(const key in el){
-      if(key=="course"){
+  for (const el of arr) {
+    for (const key in el) {
+      if (key == "course") {
         coursesName.push(el[key]);
       };
-      if(key=="Students"){
-        studentsName=[...studentsName,...el[key]]
+      if (key == "Students") {
+        studentsName = [...studentsName, ...el[key]]
       }
     }
   }
 
-//The concat() method also allows us to join together two (or more) arrays into a single new array: studentsName=[].concat(studentsName,el[key])
+  //The concat() method also allows us to join together two (or more) arrays into a single new array: studentsName=[].concat(studentsName,el[key])
   return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------
@@ -147,19 +147,18 @@ const getInfo = (arr) => {
 
 const getStudents = (arr) => {
   const result = [];
+  for (const stu of arr) {
 
-  for (const course of courses) {
-    for (const student of course.Students) {
-      if (arr.includes(student)) {
-        result.unshift({
-          Student: student,
-          course: course.course,
-        });
+    for (const el of courses) {
+      for (let i = 0; i <= el.Students.length - 1; i++) {
+        if (stu == el.Students[i]) {
+          result.push({ ['Student']: stu, ['course']: el.course })
+          continue;
+        }
       }
     }
-  }
- //Although I am sure that the code is correct, I may have made a mistake somewhere to show the results in a different order.
 
+  }
   return result;
 };
 //  ------------------------------------------------------------------------------------------------------
