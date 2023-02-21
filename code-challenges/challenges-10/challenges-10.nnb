@@ -61,7 +61,19 @@
             "source": [
                 "function migratoryBirds(arr=[]) {\n    let arrayIsUsedForCompare=[0,0,0,0,0];\n     arr.forEach((val)=>{\n         if(val==1) arrayIsUsedForCompare[0]+=1;\n         else if(val==2) arrayIsUsedForCompare[1]+=1;\n         else if(val==3) arrayIsUsedForCompare[2]+=1;\n         else if(val==4) arrayIsUsedForCompare[3]+=1;\n         else if(val==5) arrayIsUsedForCompare[4]+=1;\n     })\n      let idx=arrayIsUsedForCompare.indexOf(Math.max(...arrayIsUsedForCompare));\n     \n     return idx+1;\n }"
             ],
-            "outputs": []
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stderr",
+                            "value": [
+                                "Debugger ending on ws://127.0.0.1:33161/55b465b2-5d08-4412-9de6-eb1b98e9a000",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
