@@ -4,7 +4,7 @@
 // Kindly use map loop instead of for in all of your solutions
 
 // Resource:
-// Map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// Map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map 
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 01:
@@ -128,7 +128,7 @@ function fullName(arr = []) {
 // -------------
 
 function gradesAvg(arr) {
-
+    console.log(arr);
     const helperArray = arr.map((ele, idx, array) => {
         let avg = ele.gradsList.reduce((val, cv) => (val += cv), 0)
         avg /= ele.gradsList.length
@@ -212,10 +212,10 @@ function gradesAvg(arr) {
 function studentsResult(arr) {
 
     const helperArray = arr.map((ele, idx, array) => {
-        let avg = ele.gradsList.reduce((val, cv) => (val += cv), 0)
-        avg /= ele.gradsList.length
-        ele.avg = avg;
-        if(avg>=50) ele.result='Passed';else ele.result='Failed'
+        // let avg = ele.gradsList.reduce((val, cv) => (val += cv), 0)
+        // avg /= ele.gradsList.length
+        // ele.avg = avg;
+        if( ele.avg>=50) ele.result='Passed';else ele.result='Failed'
         return ele
     })
     // console.log(helperArray.avg)
