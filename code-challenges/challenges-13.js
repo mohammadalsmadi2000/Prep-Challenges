@@ -38,12 +38,12 @@
 //
 // Output: 5
 
-const objectCounter = (obj=[]) => {
+const objectCounter = (obj = []) => {
     // write your code here
-    const count =obj.reduce((ac,cv)=>{
+    const count = obj.reduce((ac, cv) => {
         ac++;
         return ac;
-    },0)
+    }, 0)
     return count
 }
 // -------------------------------------------------------------------------------------------------------
@@ -63,17 +63,22 @@ const objectCounter = (obj=[]) => {
 //
 // ------------------------
 
+// const stringReverse = (str) => {
+//     const helperArray = str.split(" ");
+//     const reverse = helperArray.reverse().reduce((ac, cv, idx) => {
+//         if (idx === helperArray.length - 1) ac += cv;
+//         else ac += cv + " ";
+//         return ac
+//     }, "")
+//     return reverse;
+
+// }
+
 const stringReverse = (str) => {
-    const helperArray=str.split(" ");
-const reverse=helperArray.reverse().reduce((ac,cv,idx)=>{
-    if(idx===helperArray.length-1) ac+=cv;
-     else ac+=cv+" ";
-  return ac
-},"")
-return reverse;
-
-}
-
+    return str.split(' ').reduce((ac, cv) => {
+        return cv + (ac === '' ? '' : ' ') + ac;
+    }, '');
+};
 //another solution without reduce
 // const helperArray=str.split(" ");
 // console.log(helperArray.reverse().join(" "));
@@ -118,26 +123,26 @@ return reverse;
 // };
 //
 
-const statistics = (obj=[]) => {
-    const res = obj.reduce((ac,cv)=>{
-      if(!ac.hasOwnProperty(cv.votes_To)){
-        ac[cv.votes_To]=1
-      }else {
-        ac[cv.votes_To]+=ac[cv.votes_To]
-      }
-      return ac;
-    },{})
-      return res;
-    }
+const statistics = (obj = []) => {
+    const res = obj.reduce((ac, cv) => {
+        if (!ac.hasOwnProperty(cv.votes_To)) {
+            ac[cv.votes_To] = 1
+        } else {
+            ac[cv.votes_To] += ac[cv.votes_To]
+        }
+        return ac;
+    }, {})
+    return res;
+}
 
-    //another solution 
-    // const statistics = (obj=[]) => {
-        // return obj.reduce((acc, current) => {
-        //   const name = current.votes_To;
-        //   acc[name] = acc[name] ? acc[name] + 1 : 1;
-        //   return acc;
-        // }, {});
-    //   };
+//another solution 
+// const statistics = (obj=[]) => {
+// return obj.reduce((acc, current) => {
+//   const name = current.votes_To;
+//   acc[name] = acc[name] ? acc[name] + 1 : 1;
+//   return acc;
+// }, {});
+//   };
 // -------------------------------------------------------------------------------------------------------
 
 
