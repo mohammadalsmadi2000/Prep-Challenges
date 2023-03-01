@@ -74,11 +74,11 @@ const objectCounter = (obj = []) => {
 
 // }
 
-const stringReverse = (str) => {
-    return str.split(' ').reduce((ac, cv) => {
-        return cv + (ac === '' ? '' : ' ') + ac;
-    }, '');
-};
+    const stringReverse = (str) => {
+        return str.split(' ').reduce((ac, cv) => {
+            return cv + (ac === '' ? '' : ' ') + ac;
+        }, '');
+    };
 //another solution without reduce
 // const helperArray=str.split(" ");
 // console.log(helperArray.reverse().join(" "));
