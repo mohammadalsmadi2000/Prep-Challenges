@@ -86,8 +86,12 @@ const replaceWords = (str) => {
 //
 
 const arrToStr = (arr = []) => {
-    arr.splice(4, 1, `${arr[4]},`);
-    return arr.join(' ');
+    let newIdx
+    let arrs = arr.map((el, idx, array) => {
+        newIdx = idx + 1;
+        if (newIdx % 5 == 0) return `${el},`; else return el;
+    })
+    return arrs.join(' ');
 }
 // -------------------------------------------------------------------------------------------------------
 
