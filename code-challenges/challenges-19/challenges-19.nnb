@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function appendAndDelete(s, t, k) {\n    let common = 0;\n    \n    while (common < s.length && common < t.length && s[common] === t[common])common++;\n    \n    const tempDeleteS = s.length - common;\n    const tempAppendS = t.length - common;\n    const totalS = tempDeleteS + tempAppendS;\n    \n    if (k >= totalS) {\n      if((k - totalS) % 2 === 0 || k >= s.length + t.length)return \"Yes\";\n      else return \"No\";\n    } else {\n      return \"No\";\n    }\n  \n}"
+                "function appendAndDelete(s, t, k) {\n    let common = 0;\n    \n    while (common < s.length && common < t.length && s[common] === t[common])common++;\n    \n    const tempDeleteS = s.length - common;\n    const tempAppendS = t.length - common;\n    const totalS = tempDeleteS + tempAppendS;\n    \n    if (k >= totalS) {\n      if((k - totalS) % 2 === 0 || k >= s.length + t.length)return \"Yes\";\n      else return \"No\";\n    } else {\n      return \"No\";\n    }\n}"
             ],
             "outputs": []
         },
